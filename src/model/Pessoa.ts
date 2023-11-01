@@ -1,3 +1,5 @@
+import { persistirPessoa } from "../controller/bancoDeDados";
+
 export class Pessoa {
 
     // atributos da classe
@@ -135,5 +137,14 @@ export class Pessoa {
 
     public comerPrato(prato: string):void {
         console.log(`${this.nome} está comendo ${prato}`);
+    }
+
+    public cadastrarPessoa(baninha: Pessoa) {
+        //persistindo os dados
+        try {
+            persistirPessoa(baninha);
+        } catch {
+            console.error(`${Error}`);
+        }
     }
 }

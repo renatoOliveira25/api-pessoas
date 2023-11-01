@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pessoa = void 0;
+const bancoDeDados_1 = require("../controller/bancoDeDados");
 class Pessoa {
     // atributos da classe
     nome;
@@ -115,6 +116,15 @@ class Pessoa {
     }
     comerPrato(prato) {
         console.log(`${this.nome} está comendo ${prato}`);
+    }
+    cadastrarPessoa(baninha) {
+        //persistindo os dados
+        try {
+            (0, bancoDeDados_1.persistir)(baninha);
+        }
+        catch {
+            console.error(`${Error}`);
+        }
     }
 }
 exports.Pessoa = Pessoa;
