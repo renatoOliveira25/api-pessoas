@@ -120,7 +120,7 @@ class Pessoa {
     cadastrarPessoa(baninha) {
         //persistindo os dados
         try {
-            (0, bancoDeDados_1.persistir)(baninha);
+            (0, bancoDeDados_1.persistirPessoa)(baninha);
         }
         catch {
             console.error(`${Error}`);

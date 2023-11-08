@@ -1,7 +1,17 @@
 import { Pessoa } from "../model/Pessoa";
 
+/**
+ * Lista de pessoas que são armazenadas durante a execução do programa
+ */
 let bancoDadosPessoa: Pessoa[] = [];
 
+/**
+ * Cadastra uma pessoa na lista, simulando um banco de dados.
+ * Os dados são armazenados somente durante tempo de execução
+ * 
+ * @param pessoa - Pessoa a ser inserida na lista
+ * @returns Em caso de erro, é retornado os detalhes do erro a quem chamou esta função
+ */
 export function persistirPessoa(pessoa: Pessoa) {
     //persistindo os dados
     try {
@@ -11,10 +21,18 @@ export function persistirPessoa(pessoa: Pessoa) {
     }
 }
 
+/**
+ * Lista todas as pessoas cadastradas
+ * @returns Lista de pessoas cadastradas
+ */
 export function listarPessoas() {
     return bancoDadosPessoa;
 }
 
+/**
+ * Método para inicializar o array com 5 pessoas.
+ * Apenas para a aplicação não ter um array vazio
+ */
 export function inicializarPessoas() {
     bancoDadosPessoa.push(
         new Pessoa('José Bryan Yuri Fogaça','10477613195',new Date(1998, 8, 29),'53984291927','Rua Capitão Felino Alves',174,102));
